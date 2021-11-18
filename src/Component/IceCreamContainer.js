@@ -1,12 +1,12 @@
 import React from 'react'
-import { buyCakes } from '../Redux'
+import { buyIceCream } from '../Redux'
 import { connect } from 'react-redux'
 
-function CakeContainer(props) {
+function IceCreamContainer(props) {
     return (
         <div>
-            <h1>Numbers of Cakes - {props.numofCakes}</h1>
-            <button onClick={props.buyCake}>Buy Cake</button>
+            <h1>Numbers of IceCream - { props.numofIceCream }</h1>
+            <button onClick={ props.buyIceCream }>Buy IceCream</button>
         </div>
     )
 }
@@ -15,7 +15,7 @@ function CakeContainer(props) {
 // step:1
 const mapStateToProps = (state) =>{
     return{
-        numofCakes: state.cake.numofCakes
+        numofIceCream: state.iceCream.numofIceCreams
     }
 }
 
@@ -23,11 +23,11 @@ const mapStateToProps = (state) =>{
 // mapDispatchToProps is map our dispatch of an anction creator to a props in our component
 const mapDispatchToProps = (dispatch) =>{
     return{
-        buyCake: () => dispatch(buyCakes())
+        buyIceCream: () => dispatch(buyIceCream())
     }
 }
 
-// buyCakes() import from ../Redux/Cakes/cakeActions
+// buyIceCream() import from ../Redux/Cakes/IceCream/IceCreamAction
 
 // connect this 2 function to react component(import connect from react-redux)
-export default connect(mapStateToProps,mapDispatchToProps)(CakeContainer)
+export default connect(mapStateToProps,mapDispatchToProps)(IceCreamContainer)
