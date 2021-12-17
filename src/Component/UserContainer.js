@@ -25,12 +25,14 @@ function UserContainer({ userData , fetchUser }) {
     )
 }
 
+//it is used in the Redux pattern to reflect any updates to the Redux store and merge them into props in your component
 const mapStateToProps = (state) => {
     return {
         userData: state.user
     }
 }
 
+// it is used for dispatching actions to the store.
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchUser: () => dispatch(fetchUsers())
