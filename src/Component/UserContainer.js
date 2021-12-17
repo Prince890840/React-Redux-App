@@ -3,6 +3,8 @@ import { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { fetchUsers } from '../Redux'
 
+//  Concept of api end point and display fetch data in the UI.
+
 function UserContainer({ userData , fetchUser }) {
     useEffect(() => {
         fetchUser()
@@ -38,3 +40,11 @@ const mapDispatchToProps = (dispatch) => {
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserContainer)
 
+/*Synchronous Action
+-> As soon as an action was dispatched , the state was immediately updated.
+-> if you dispatch the buy_cake action,the numofcakes was right away decrementated by 1.
+-> Same with buy_icecreame action as well.
+
+Asyncronous Action
+-> Asyncronous APIs calls to fetch data from an end point and use that data i your application.
+*/
