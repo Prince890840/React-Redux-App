@@ -10,6 +10,7 @@ const cakeReducer = (state = initialState,action)=>{
     switch(action.type){
         case BUY_CAKES: return{
             ...state,
+            //  copy of an existing State
             numofCakes: state.numofCakes - action.payload
         }
         default: return state
